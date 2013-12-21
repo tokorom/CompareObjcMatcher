@@ -1,3 +1,6 @@
 [submodule "expecta"]
 	path = expecta
 	url = https://github.com/specta/expecta.git
+[submodule "TKRSpecificTest"]
+	path = TKRSpecificTest
+	url = https://github.com/tokorom/TKRSpecificTest.git

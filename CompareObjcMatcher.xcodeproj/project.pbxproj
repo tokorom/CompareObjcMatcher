@@ -55,6 +55,8 @@
 		0631C46C18651AC90017C640 /* EXPMatchers+respondTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0631C41618651AC90017C640 /* EXPMatchers+respondTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0631C46D18651AC90017C640 /* NSValue+Expecta.m in Sources */ = {isa = PBXBuildFile; fileRef = 0631C41A18651AC90017C640 /* NSValue+Expecta.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0631C646186521330017C640 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0631C645186521330017C640 /* OCHamcrestIOS.framework */; };
+		069E390C18653CCE003698A9 /* TKRTestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = 069E38FD18653CCE003698A9 /* TKRTestSuite.m */; };
+		069E390D18653CCE003698A9 /* XCTestSuite+Only.m in Sources */ = {isa = PBXBuildFile; fileRef = 069E38FF18653CCE003698A9 /* XCTestSuite+Only.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +160,10 @@
 		0631C41918651AC90017C640 /* NSValue+Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+Expecta.h"; sourceTree = "<group>"; };
 		0631C41A18651AC90017C640 /* NSValue+Expecta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+Expecta.m"; sourceTree = "<group>"; };
 		0631C645186521330017C640 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrestIOS.framework; sourceTree = "<group>"; };
+		069E38FC18653CCE003698A9 /* TKRTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKRTestSuite.h; sourceTree = "<group>"; };
+		069E38FD18653CCE003698A9 /* TKRTestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKRTestSuite.m; sourceTree = "<group>"; };
+		069E38FE18653CCE003698A9 /* XCTestSuite+Only.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCTestSuite+Only.h"; sourceTree = "<group>"; };
+		069E38FF18653CCE003698A9 /* XCTestSuite+Only.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCTestSuite+Only.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +194,7 @@
 		0631C38318651A0C0017C640 = {
 			isa = PBXGroup;
 			children = (
+				069E38EF18653CCE003698A9 /* TKRSpecificTest */,
 				0631C644186521330017C640 /* OCHamcrest */,
 				0631C3C718651AC90017C640 /* expecta */,
 				0631C39518651A0C0017C640 /* CompareObjcMatcher */,
@@ -361,6 +368,25 @@
 			path = OCHamcrest;
 			sourceTree = "<group>";
 		};
+		069E38EF18653CCE003698A9 /* TKRSpecificTest */ = {
+			isa = PBXGroup;
+			children = (
+				069E38FB18653CCE003698A9 /* TKRSpecificTest */,
+			);
+			path = TKRSpecificTest;
+			sourceTree = "<group>";
+		};
+		069E38FB18653CCE003698A9 /* TKRSpecificTest */ = {
+			isa = PBXGroup;
+			children = (
+				069E38FC18653CCE003698A9 /* TKRTestSuite.h */,
+				069E38FD18653CCE003698A9 /* TKRTestSuite.m */,
+				069E38FE18653CCE003698A9 /* XCTestSuite+Only.h */,
+				069E38FF18653CCE003698A9 /* XCTestSuite+Only.m */,
+			);
+			path = TKRSpecificTest;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -469,6 +495,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				069E390D18653CCE003698A9 /* XCTestSuite+Only.m in Sources */,
 				0631C44F18651AC90017C640 /* EXPBlockDefinedMatcher.m in Sources */,
 				0631C46318651AC90017C640 /* EXPMatchers+beSupersetOf.m in Sources */,
 				0631C46D18651AC90017C640 /* NSValue+Expecta.m in Sources */,
@@ -484,6 +511,7 @@
 				0631C45118651AC90017C640 /* Expecta.m in Sources */,
 				0631C46218651AC90017C640 /* EXPMatchers+beSubclassOf.m in Sources */,
 				0631C45C18651AC90017C640 /* EXPMatchers+beInstanceOf.m in Sources */,
+				069E390C18653CCE003698A9 /* TKRTestSuite.m in Sources */,
 				0631C45718651AC90017C640 /* EXPMatchers+beCloseTo.m in Sources */,
 				0631C45218651AC90017C640 /* ExpectaSupport.m in Sources */,
 				0631C45818651AC90017C640 /* EXPMatchers+beFalsy.m in Sources */,
@@ -714,6 +742,7 @@
 				0631C3C318651A0C0017C640 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0631C3C418651A0C0017C640 /* Build configuration list for PBXNativeTarget "CompareObjcMatcherTests" */ = {
 			isa = XCConfigurationList;
@@ -722,6 +751,7 @@
 				0631C3C618651A0C0017C640 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

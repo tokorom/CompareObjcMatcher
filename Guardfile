@@ -9,11 +9,22 @@ module ::Guard
     SUFFIX = "| xcpretty -c"
     COMMAND = "xcodebuild test -scheme #{SCHEME} -destination '#{DESTINATION}'"
     #COMMAND = "xcodebuild test -scheme #{SCHEME} -destination '#{DESTINATION}' #{SUFFIX}"
+    
     def run_all
       system(COMMAND)
     end
+
+    def run_specific_test
+      testOnly = "GCC_PREPROCESSOR_DEFINITIONS='DEBUG=1 TEST_ONLY=\\\"CompareObjcMatcherTests/testExampleByExpecta\\\"'"
+      onlyCommand = "xcodebuild test -scheme #{SCHEME} -destination '#{DESTINATION}' #{testOnly} #{SUFFIX}"
+      puts onlyCommand
+      system(onlyCommand)
+    end
+
     def run_on_changes(paths)
       run_all
+      #run_specific_test
+      
       #onlys = paths.map {|path| "-only Tests:#{File.basename(path, '.*')}" }.join(' ')
       #if onlys.empty?
         #system(COMMAND)
