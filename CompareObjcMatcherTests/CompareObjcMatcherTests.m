@@ -45,7 +45,7 @@
   
   XCTAssertEqualObjects(string, @"NG");
   
-  XCTAssertTrue([number isKindOfClass:<#(__unsafe_unretained Class)#>:[NSString class]]);
+  XCTAssertTrue([number isKindOfClass:[NSString class]]);
 }
 
 - (void)testExampleByExpecta
