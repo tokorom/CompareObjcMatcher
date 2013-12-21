@@ -8,8 +8,13 @@
 
 #import <XCTest/XCTest.h>
 
-@interface CompareObjcMatcherTests : XCTestCase
+#define EXP_SHORTHAND
+#import "Expecta.h"
 
+#define HC_SHORTHAND
+#import <OCHamcrestIOS/OCHamcrestIOS.h>
+
+@interface CompareObjcMatcherTests : XCTestCase
 @end
 
 @implementation CompareObjcMatcherTests
@@ -26,9 +31,55 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testExampleByXCTAsserts
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+  int i1 = 100;
+  NSInteger i2 = 100;
+  NSNumber *number = @100;
+  NSString *string = @"OK";
+
+  XCTAssertEqual(i1, 100);
+  XCTAssertEqual((int)i2, 100);
+  XCTAssertEqualObjects(number, @100);
+  XCTAssertEqualObjects(string, @"OK");
+  
+  XCTAssertEqualObjects(string, @"NG");
+  
+  XCTAssertTrue([number isKindOfClass:<#(__unsafe_unretained Class)#>:[NSString class]]);
+}
+
+- (void)testExampleByExpecta
+{
+  int i1 = 100;
+  NSInteger i2 = 100;
+  NSNumber *number = @100;
+  NSString *string = @"OK";
+  
+  expect(i1).to.equal(100);
+  expect(i2).to.equal(100);
+  expect(number).to.equal(@100);
+  expect(string).to.equal(@"OK");
+  
+  expect(string).to.equal(@"NG");
+  
+  expect(number).to.beKindOf([NSString class]);
+}
+
+- (void)testExampleByOCHamcrest
+{
+  int i1 = 100;
+  NSInteger i2 = 100;
+  NSNumber *number = @100;
+  NSString *string = @"OK";
+  
+  assertThatInt(i1, equalToInt(100));
+  assertThatInteger(i2, equalToInteger(100));
+  assertThat(number, equalTo(@100));
+  assertThat(string, equalTo(@"OK"));
+  
+  assertThat(string, equalTo(@"NG"));
+  
+  assertThat(number, instanceOf([NSString class]));
 }
 
 @end
